@@ -17,6 +17,15 @@ function Footer() {
                 />
                 <p>Copyright &copy; {footerYear}</p>
             </div>
+
+            <small>
+                <a
+                    href="https://www.flaticon.com/free-icons/error"
+                    title="error icons"
+                >
+                    Error icons created by juicy_fish - Flaticon
+                </a>
+            </small>
         </footer>
     );
 }
