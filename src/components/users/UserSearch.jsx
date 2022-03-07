@@ -3,7 +3,7 @@ import GithubContext from '../../context/github/GithubContext';
 
 function UserSearch() {
     const [text, setText] = useState('');
-    const { users, searchUsers } = useContext(GithubContext);
+    const { users, searchUsers, clearUsers } = useContext(GithubContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -42,9 +42,14 @@ function UserSearch() {
                 </form>
             </div>
             {/* Only show clear button if there are results.. */}
-            {users.length > 0 && (
+            {users && users.length > 0 && (
                 <div>
-                    <button className="btn btn-ghost btn-lg">Clear</button>
+                    <button
+                        className="btn btn-ghost btn-lg"
+                        onClick={clearUsers}
+                    >
+                        Clear
+                    </button>
                 </div>
             )}
         </div>
