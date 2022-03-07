@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 // Components
+import Alert from './components/layouts/Alert';
 import Navbar from './components/layouts/Navbar';
 import Footer from './components/layouts/Footer';
 // Context Provider
@@ -19,6 +20,7 @@ function App() {
                     <div className="flex flex-col justify-between h-screen">
                         <Navbar />
                         <main className="container mx-auto px-3 pb-12"></main>
+                        <Alert />
                         <Routes>
                             <Route path="/" element={<Home />}></Route>
                             <Route path="/about" element={<About />}></Route>
