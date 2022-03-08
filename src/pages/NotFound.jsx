@@ -6,7 +6,7 @@ function NotFound() {
     return (
         <div className="hero">
             <div className="text-center hero-content flex flex-col justify-center h-screen">
-                <img src={Terminal} alt="SVG" />
+                <img src={Terminal} alt="SVG" style={{ scale: '200%' }} />
                 <h1 className="text-7xl mb-8">
                     <strong className="text-9xl" id="404">
                         404

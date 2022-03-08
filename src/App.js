@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Pages
 import Home from './pages/Home';
 import About from './pages/About';
+import User from './pages/User';
 import NotFound from './pages/NotFound';
 // Components
 import Alert from './components/layouts/Alert';
@@ -23,7 +24,11 @@ function App() {
                         <Alert />
                         <Routes>
                             <Route path="/" element={<Home />}></Route>
-                            <Route path="/about" element={<About />}></Route>
+                            <Route
+                                path="/user/:login"
+                                element={<User />}
+                            ></Route>
+                            <Route path="/about" element={<User />}></Route>
                             <Route
                                 path="/notfound"
                                 element={<NotFound />}
