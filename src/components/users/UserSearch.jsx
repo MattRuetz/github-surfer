@@ -7,7 +7,7 @@ const UserSearch = () => {
     const [text, setText] = useState('');
 
     // Get contexts
-    const { users, clearUsers, dispatch } = useContext(GithubContext);
+    const { users, dispatch } = useContext(GithubContext);
     const { setAlert } = useContext(AlertContext);
 
     const handleSubmit = async (e) => {
@@ -53,7 +53,7 @@ const UserSearch = () => {
                 <div>
                     <button
                         className="btn btn-ghost btn-lg"
-                        onClick={clearUsers}
+                        onClick={() => dispatch({ type: 'CLEAR_USERS' })}
                     >
                         Clear
                     </button>
