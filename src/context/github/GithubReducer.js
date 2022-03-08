@@ -11,6 +11,9 @@ const githubReducer = (state, action) => {
                 user: action.payload,
                 loading: false,
             };
+
+        case 'GET_REPOS':
+            return { ...state, repos: action.payload, loading: false };
         case 'CLEAR_USERS':
             // set users to empty array, not loading - reset state
             return { ...state, users: [], loading: false };
