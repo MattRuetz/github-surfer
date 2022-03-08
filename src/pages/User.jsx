@@ -2,7 +2,7 @@ import { FaCode, FaStore, FaUserFriends, FaUsers } from 'react-icons/fa';
 import { useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Spinner from '../img/loading.svg';
+import Spinner from '../components/layouts/Spinner';
 import GithubContext from '../context/github/GithubContext';
 import { getUserAndRepos } from '../context/github/GithubActions';
 import RepoList from '../components/repos/RepoList';
@@ -40,7 +40,7 @@ function User() {
     } = user;
 
     return loading ? (
-        <img src={Spinner} alt="Loading..." /> // TODO: MAKE A SPINNER COMPONENT
+        <Spinner />
     ) : (
         <>
             <div className="w-full mx-auto lg:w-10/12">
