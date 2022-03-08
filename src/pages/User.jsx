@@ -4,15 +4,17 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Spinner from '../img/loading.svg';
 import GithubContext from '../context/github/GithubContext';
+import RepoList from '../components/repos/RepoList';
 
 function User() {
-    const { getUser, user, loading } = useContext(GithubContext);
+    const { getUser, user, loading, getUserRepos, repos } =
+        useContext(GithubContext);
 
     const params = useParams();
 
     useEffect(() => {
         getUser(params.login);
-        // getUserRepos(params.login);
+        getUserRepos(params.login);
     }, []);
 
     const {
@@ -39,7 +41,7 @@ function User() {
             <div className="w-full mx-auto lg:w-10/12">
                 <div className="mb-4">
                     <Link to="/" className="btn btn-ghost">
-                        Back to Search
+                        Back To Search
                     </Link>
                 </div>
 
@@ -47,7 +49,7 @@ function User() {
                     <div className="custom-card-image mb-6 md:mb-0">
                         <div className="rounded-lg shadow-xl card image-full">
                             <figure>
-                                <img src={avatar_url} alt="Avatar" />
+                                <img src={avatar_url} alt="" />
                             </figure>
                             <div className="card-body justify-end">
                                 <h2 className="card-title mb-0">{name}</h2>
@@ -81,6 +83,7 @@ function User() {
                                 </a>
                             </div>
                         </div>
+
                         <div className="w-full rounded-lg shadow-md bg-base-100 stats">
                             {location && (
                                 <div className="stat">
@@ -115,11 +118,11 @@ function User() {
                                     </div>
                                     <div className="text-lg stat-value">
                                         <a
-                                            href={`https://twitter.com/${twitter_username}}`}
+                                            href={`https://twitter.com/${twitter_username}`}
                                             target="_blank"
                                             rel="noreferrer"
                                         >
-                                            {blog}
+                                            {twitter_username}
                                         </a>
                                     </div>
                                 </div>
@@ -127,6 +130,7 @@ function User() {
                         </div>
                     </div>
                 </div>
+
                 <div className="w-full py-5 mb-6 rounded-lg shadow-md bg-base-100 stats">
                     <div className="stat">
                         <div className="stat-figure text-secondary">
@@ -168,6 +172,8 @@ function User() {
                         </div>
                     </div>
                 </div>
+
+                <RepoList repos={repos} />
             </div>
         </>
     );
