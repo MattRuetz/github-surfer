@@ -6,7 +6,10 @@ const Navbar = ({ title }) => {
     return (
         <nav className="navbar mb-12 shadow-lg bg-neutral text-neutral-content">
             <div className="container mx-auto">
-                <div className="flex-none px-2 mx-2">
+                <div
+                    className="flex-none px-2 mx-2"
+                    style={{ color: 'lightskyblue' }}
+                >
                     <FaGithub className="inline pr-2 text-3xl" />
                     <Link to="/" className="text-lg font-bold align-middle">
                         {title}
@@ -35,7 +38,7 @@ const Navbar = ({ title }) => {
 };
 
 Navbar.defaultProps = {
-    title: 'Github Explorer 🗺️',
+    title: 'Github Surfer 🏄',
 };
 
 Navbar.propTypes = {
