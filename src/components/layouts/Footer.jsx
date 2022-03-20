@@ -1,6 +1,5 @@
 import React from 'react';
 import './Footer.css';
-import footerImg from '../../img/footer-img.svg';
 
 function Footer() {
     const footerYear = new Date().getFullYear();
